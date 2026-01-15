@@ -14,8 +14,8 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <quarkus.version>3.28.0</quarkus.version>
-        <quarkus-langchain4j.version>999-SNAPSHOT</quarkus-langchain4j.version>
-        <tornado.argfile>${env.TORNADO_SDK}/../../../tornado-argfile</tornado.argfile>
+        <quarkus-langchain4j.version>1.4.2</quarkus-langchain4j.version>
+        <tornado.argfile>${env.TORNADOVM_HOME}/tornado-argfile</tornado.argfile>
     </properties>
 
     <modules>

@@ -9,7 +9,7 @@ sdk use java 21.0.2-open
 ```
 2) TornadoVM
 ``` bash
-source ~/TornadoVM/setvars.sh
+sdk use tornadovm 2.2.0-opencl
 ```
 
 ### Build
@@ -21,10 +21,10 @@ mvn clean install
 ### Run:
 Run chat-demo:
 ``` bash
-java @$TORNADO_SDK/../../../tornado-argfile -jar demos/chat-demo/target/quarkus-app/quarkus-run.jar
+java @$TORNADOVM_HOME/tornado-argfile -jar demos/chat-demo/target/quarkus-app/quarkus-run.jar
 ```
 
 Run streaming-demo:
 ``` bash
-java @$TORNADO_SDK/../../../tornado-argfile -jar demos/streaming-demo/target/quarkus-app/quarkus-run.jar
+java @$TORNADOVM_HOME/tornado-argfile -jar demos/streaming-demo/target/quarkus-app/quarkus-run.jar
 ```
