@@ -22,10 +22,6 @@ ollama pull llama3.2:1b-instruct-q8_0
 ```
 export OLLAMA_API_BASE=http://127.0.0.1:11434
 ```
-4) Setup Ollama local server: 
-```bash
-ollama serve llama3.2:1b-instruct-q8_0
-```
 
 ### Quarkus-langchain4j
 ```bash
@@ -44,6 +40,11 @@ mvn clean install
 Run chat-demo:
 ``` bash
 java -jar demos/chat-demo/target/quarkus-app/quarkus-run.jar
+# the ollama server remains open and reduces time to first token
+# after each run we need to manually stop it 
+# to create fair comparison conditions with gpu-llama
+ollama stop llama3.2:1b-instruct-q8_0
+# ollama stop llama3.2:1b-instruct-fp16
 ```
 
 Run streaming-demo (not tested):
