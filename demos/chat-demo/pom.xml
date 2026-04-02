@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>
-            <artifactId>quarkus-langchain4j-gpu-llama3</artifactId>
+            <artifactId>quarkus-langchain4j-ollama</artifactId>
             <version>${quarkus-langchain4j.version}</version>
         </dependency>
     </dependencies>
