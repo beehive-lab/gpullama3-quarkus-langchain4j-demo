@@ -36,6 +36,16 @@ java @$TORNADOVM_HOME/tornado-argfile \
     -jar demos/chat-demo/target/quarkus-app/quarkus-run.jar
 ```
 
+- with batched prefill-decode
+```bash
+java @$TORNADOVM_HOME/tornado-argfile \
+    --add-modules jdk.incubator.vector \
+    -Dtornado.device.memory=15GB \
+    -Dllama.batchedPrefill=true \
+    -Dllama.prefillBatchSize=32 \
+    -jar demos/chat-demo/target/quarkus-app/quarkus-run.jar
+```
+
 Run streaming-demo:
 ``` bash
 java @$TORNADOVM_HOME/tornado-argfile \
