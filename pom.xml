@@ -10,11 +10,14 @@
     <packaging>pom</packaging>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <quarkus.version>3.28.0</quarkus.version>
-        <quarkus-langchain4j.version>1.4.2</quarkus-langchain4j.version>
+<!--        old quarkus-langchain4j version-->
+<!--        <quarkus-langchain4j.version>1.4.2</quarkus-langchain4j.version>-->
+        <quarkus-langchain4j.version>999-SNAPSHOT</quarkus-langchain4j.version>
+<!--        <quarkus-langchain4j.version>1.8.4</quarkus-langchain4j.version>-->
         <tornado.argfile>${env.TORNADOVM_HOME}/tornado-argfile</tornado.argfile>
     </properties>
 
@@ -43,8 +46,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.11.0</version>
                     <configuration>
-                        <source>21</source>
-                        <target>21</target>
+                        <source>25</source>
+                        <target>25</target>
                         <parameters>true</parameters>
                     </configuration>
                 </plugin>
@@ -62,7 +65,10 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <jvmArgs>@${tornado.argfile}</jvmArgs>
+                        <jvmArgs>
+                            @${tornado.argfile}
+                            --add-modules jdk.incubator.vector
+                        </jvmArgs>
                     </configuration>
                 </plugin>
             </plugins>
