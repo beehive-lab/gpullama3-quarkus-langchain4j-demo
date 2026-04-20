@@ -24,6 +24,7 @@
     <modules>
         <module>demos/chat-demo</module>
         <module>demos/streaming-demo</module>
+        <module>demos/tool-demo-ls</module>
     </modules>
 
     <dependencyManagement>
@@ -76,6 +77,7 @@
                         <jvmArgs>
                             @${tornado.argfile}
                             --add-modules jdk.incubator.vector
+                            --enable-preview
                         </jvmArgs>
                     </configuration>
                 </plugin>

@@ -9,7 +9,7 @@ sdk use java 25.0.2-open
 ```
 2) TornadoVM
 ``` bash
-sdk use tornadovm 3.0.0-jdk25-ptx
+sdk use tornadovm 4.0.0-jdk25-ptx
 ```
 
 3) Manual Clone and Build Quarkus-langchain4j to enable jdk25 support:
@@ -52,4 +52,14 @@ java @$TORNADOVM_HOME/tornado-argfile \
     --add-modules jdk.incubator.vector \
     -Dtornado.device.memory=15GB \
     -jar demos/streaming-demo/target/quarkus-app/quarkus-run.jar
+```
+
+Run tool-demo-ls:
+```bash
+java @$TORNADOVM_HOME/tornado-argfile \
+    --add-modules jdk.incubator.vector \
+    --enable-preview \
+    -Dtornado.device.memory=15GB \
+    -jar demos/tool-demo-ls/target/quarkus-app/quarkus-run.jar \
+    "Show me what is inside /tmp"
 ```
