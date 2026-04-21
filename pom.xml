@@ -25,6 +25,8 @@
         <module>demos/chat-demo</module>
         <module>demos/streaming-demo</module>
         <module>demos/tool-demo-ls</module>
+        <module>demos/java-coder-demo</module>
+        <module>demos/java-coder-iterative</module>
     </modules>
 
     <dependencyManagement>
@@ -38,11 +40,11 @@
             </dependency>
 
             <!-- to FORCE specific local gpu-llama version -->
-<!--            <dependency>-->
-<!--                <groupId>io.github.beehive-lab</groupId>-->
-<!--                <artifactId>gpu-llama3</artifactId>-->
-<!--                <version>0.4.0-dev-jdk25</version>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>io.github.beehive-lab</groupId>
+                <artifactId>gpu-llama3</artifactId>
+                <version>0.4.0-jdk25</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -76,8 +78,7 @@
                     <configuration>
                         <jvmArgs>
                             @${tornado.argfile}
-                            --add-modules jdk.incubator.vector
-                            --enable-preview
+                            --add-opens java.base/java.lang=ALL-UNNAMED
                         </jvmArgs>
                     </configuration>
                 </plugin>
